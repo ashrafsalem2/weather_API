@@ -3,7 +3,14 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- description data -->
+    <meta
+      name="description"
+      content="get latest weather news - current location weather, or just search for the city you want"
+    />
     <title>Weather</title>
+    <!-- title icon -->
+    <link rel="icon" href="assets/images/logo@2x.png" />
     <!-- bootstrap -->
     <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
     <!-- fontawesome -->
@@ -12,10 +19,273 @@
     <link rel="stylesheet" href="assets/css/styles.css" />
   </head>
   <body>
-    
+    <!-- header -->
+    <header>
+      <nav class="navbar navbar-expand-lg bg-body-tertiary py-5">
+        <div class="container">
+          <a class="navbar-brand fs-5 text-uppercase text-white" href="#">
+            <div class="logo_content d-flex column-gap-2">
+              <img src="assets/images/logo@2x.png" alt="weather image" />
+              <div class="logo_info text-white d-flex flex-column">
+                <h6>Weather</h6>
+                <p>tagline goes here</p>
+              </div>
+            </div>
+          </a>
+          <span
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span
+              class="new_shap text-center "
+            >
+              <i class="fa-solid fa-bars text-white"></i>
+            </span>
+          </span>
+          <div
+            class="collapse navbar-collapse d-lg-flex justify-content-lg-end"
+            id="navbarSupportedContent"
+          >
+            <ul class="navbar-nav mb-2 mb-lg-0 column-gap-3">
+              <li class="nav-item">
+                <a
+                  class="nav-link btn rounded-1 text-secondary logout"
+                  aria-current="page"
+                  href="../index.html"
+                  ><span class="active px-4 py-1">Home </span></a
+                >
+              </li>
+              <li class="nav-item">
+                <a
+                  class="nav-link btn rounded-1 text-secondary logout"
+                  aria-current="page"
+                  href="../index.html"
+                  ><span class="px-4 py-1">News </span></a
+                >
+              </li>
+              <li class="nav-item">
+                <a
+                  class="nav-link btn rounded-1 text-secondary logout"
+                  aria-current="page"
+                  href="../index.html"
+                  ><span class="px-4 py-1">Live Camers </span></a
+                >
+              </li>
+              <li class="nav-item">
+                <a
+                  class="nav-link btn rounded-1 text-secondary logout"
+                  aria-current="page"
+                  href="../index.html"
+                  ><span class="px-4 py-1">Photos</span></a
+                >
+              </li>
+              <li class="nav-item">
+                <a
+                  class="nav-link btn rounded-1 text-secondary logout"
+                  aria-current="page"
+                  href="../index.html"
+                  ><span class="px-4 py-1">Contacts</span></a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <!-- main -->
+    <main>
+      <section
+        class="hero w-100 vh-min-100"
+        style="background-color: var(--main_color)"
+      >
+        <div class="container p-5">
+          <div class="row">
+            <div class="weather_content">
+              <div class="col-12">
+                <div
+                  class="search_weather w-100 rounded-5 d-flex justify-content-between align-items-center p-1"
+                  style="background-color: var(--main_color)"
+                >
+                  <input
+                    type="text"
+                    name="search"
+                    id="search"
+                    class="w-100 rounded-5 p-1 border-0 text-white px-3"
+                    placeholder="Find your location..."
+                  />
+                  <button
+                    class="btn btn-info rounded-pill px-4 py-2 text-white"
+                  >
+                    Find
+                  </button>
+                </div>
+              </div>
+              <div class="col-12 py-5">
+                <div
+                  class="weather_results d-flex flex-column flex-lg-row rounded-2"
+                >
+                  <div class="card_1  text-white">
+                    <div class="card-header d-flex justify-content-between p-2">
+                      <span class="day" id="today_name">Tuesday</span>
+                      <span class="date" id="today_date">24December</span>
+                    </div>
+                    <div class="card-body p-4">
+                      <h5 class="card-title" id="today_location">Alexandria</h5>
+                      <p class="fs-1"><span id="today_temp">15.2</span>&deg;C</p>
+                      <div class="weather_symbole p-3">
+                        <img src="" alt="weather cond" id="today_image" width="90px">
+                      </div>
+                      <span class="weather_status text-start" id="today_status">Clear</span>
+                    </div>
+                    <div class="card-footer p-2">
+                      <div
+                        class="card_footer_content d-flex justify-content-start align-items-center column-gap-4 py-3"
+                      >
+                        <i class="fa fa-umbrella"
+                          ><span class="px-2"><span id="today_rain"></span></span>
+                        </i>
+                        <i class="fa fa-wind"
+                          ><span class="px-2"><span id="today_wind">18</span>km/h</span>
+                        </i>
+                        <i class="fa-regular fa-compass"
+                          ><span class="px-2"><span id="today_wind_dir">East</span></span></i
+                        >
+                      </div>
+                    </div>
+                  </div>
+                  <div class="card_2 text-white">
+                    <div class="card-header d-flex justify-content-between p-2">
+                      <span class="day" id="tomorrow_name">Tuesday</span>
+                      <span class="date" id="tomorrow_date">24December</span>
+                    </div>
+                    <div class="card-body p-4">
+                      <h5 class="card-title" id="tomorrow_location">Alexandria</h5>
+                      <p class="fs-1"><span id="tomorrow_temp">15.2</span>&deg;C</p>
+                      <div class="weather_symbole p-3">
+                        <img src="" alt="weather cond" id="tomorrow_image" width="90px">
+                      </div>
+                      <span class="weather_status text-start" id="tomorrow_status">Clear</span>
+                    </div>
+                    <div class="card-footer p-2">
+                      <div
+                        class="card_footer_content d-flex justify-content-start align-items-center column-gap-4 py-3"
+                      >
+                        <i class="fa fa-umbrella"
+                          ><span class="px-2"><span id="tomorrow_rain"></span></span>
+                        </i>
+                        <i class="fa fa-wind"
+                          ><span class="px-2"><span id="tomorrow_wind">18</span>km/h</span>
+                        </i>
+                        <i class="fa-regular fa-compass"
+                          ><span class="px-2"><span id="tomorrow_wind_dir">East</span></span></i
+                        >
+                      </div>
+                  </div>
+                  </div>
+                  <div class="card_3  text-white">
+                    <div class="card-header d-flex justify-content-between p-2">
+                      <span class="day" id="next_tomorrow_name">Tuesday</span>
+                      <span class="date" id="next_tomorrow_date">24December</span>
+                    </div>
+                    <div class="card-body p-4">
+                      <h5 class="card-title" id="next_tomorrow_location">Alexandria</h5>
+                      <p class="fs-1"><span id="next_tomorrow_temp">15.2</span>&deg;C</p>
+                      <div class="weather_symbole p-3">
+                        <img src="" alt="weather cond" id="next_tomorrow_image" width="90px">
+                      </div>
+                      <span class="weather_status text-start" id="next_tomorrow_status">Clear</span>
+                    </div>
+                    <div class="card-footer p-2">
+                      <div
+                        class="card_footer_content d-flex justify-content-start align-items-center column-gap-4 py-3"
+                      >
+                        <i class="fa fa-umbrella"
+                          ><span class="px-2"><span id="next_tomorrow_rain"></span></span>
+                        </i>
+                        <i class="fa fa-wind"
+                          ><span class="px-2"><span id="next_tomorrow_wind">18</span>km/h</span>
+                        </i>
+                        <i class="fa-regular fa-compass"
+                          ><span class="px-2"><span id="next_tomorrow_wind_dir">East</span></span></i
+                        >
+                      </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="footer p-5">
+        <div class="container">
+          <div class="row justify-content-between align-items-center">
+            <div class="col-sm-12 col-md-7">
+              <div
+                class="search_weather rounded-5 d-flex justify-content-between align-items-center p-1"
+                style="background-color: var(--main_color)"
+              >
+                <input
+                  type="text"
+                  name="search"
+                  id="search"
+                  class="w-100 rounded-5 p-1 border-0 text-white px-3"
+                  placeholder="Enter your email to Subscribe..."
+                />
+                <button
+                  class="btn btn-info rounded-pill px-4 py-2 text-white"
+                  style="background-color: var(--sub_color)"
+                >
+                  Subscribe
+                </button>
+              </div>
+            </div>
+            <div class="col-sm-12 col-md-4 offset-1 mt-sm-3">
+              <ul
+                class="list-unstyled text-decoration-none d-flex my-4 justify-content-start column-gap-2"
+              >
+                <li>
+                  <span>
+                    <i class="fa-brands fa-facebook-f"></i>
+                  </span>
+                </li>
+                <li>
+                  <span>
+                    <i class="fa-brands fa-twitter"></i>
+                  </span>
+                </li>
+                <li>
+                  <span>
+                    <i class="fa-brands fa-google-plus-g"></i>
+                  </span>
+                </li>
+                <li>
+                  <span>
+                    <i class="fa-brands fa-pinterest"></i>
+                  </span>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col">
+              <p style="color: #b9c1c8; font-size: 14px">
+                Copyright 2014 Company name. Designed by Themezy. All rights
+                reserved
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
     <!-- bootstrap js -->
     <script src="assets/js/bootstrap.bundle.min.js"></script>
     <!-- custom js -->
-    <script src="assets/js/index.js"></script>
+    <script type="module" src="assets/js/index.js"></script>
   </body>
 </html>

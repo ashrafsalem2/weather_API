@@ -1,0 +1,277 @@
+/* global variables */
+:root {
+  --main_color: #1e202b;
+  --main_color2: #232530;
+  --main_color3: #262936;
+  --header_color: #2d303e;
+  --header_color2: #323544;
+  --sub_color: #009ad8;
+  --sub_color2: #009ad8;
+  --small_color: #bfc1c8;
+  --nav_color: #fff;
+}
+
+body {
+  font-family: sans-serif;
+  font-weight: 400 !important;
+  font-size: 14px !important;
+}
+.container {
+  margin-right: auto;
+  margin-left: auto;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+@media (min-width: 768px) {
+  .container {
+    width: 750px;
+  }
+}
+@media (min-width: 992px) {
+  .container {
+    width: 970px;
+  }
+}
+@media (min-width: 1200px) {
+  .container {
+    width: 1170px;
+  }
+}
+
+/* headers */
+.navbar {
+  background-color: var(--main_color) !important;
+}
+.navbar .logo_content img {
+  width: 70px;
+  height: 40px;
+}
+
+.navbar .logo_content .logo_info h6 {
+  font-size: 16px;
+  font-weight: bold;
+  text-transform: capitalize;
+}
+
+.navbar .logo_content .logo_info p {
+  font-size: 10px;
+  font-weight: normal;
+  text-transform: lowercase;
+  color: var(--small_color);
+}
+
+.navbar .navbar-nav .nav-item .nav-link {
+  color: #fff !important;
+}
+.navbar .navbar-nav .nav-item .nav-link span.active {
+  border: 3px solid #009ad8 !important;
+  border-radius: 100vh;
+  color: #009ad8 !important;
+}
+
+.navbar .navbar-nav .nav-item .nav-link span:hover {
+  border: 3px solid #009ad8 !important;
+  border-radius: 100vh;
+  color: #009ad8 !important;
+}
+.navbar .navbar-nav .nav-item .nav-link span {
+  transition: 0.5s all;
+  border: 3px solid transparent !important;
+}
+
+@media screen and (max-width: 992px) {
+  /* toggle button button */
+  .navbar-toggler {
+    display: inline-block;
+    box-sizing: content-box;
+    color: white !important;
+    width: 30px !important;
+    height: 50px !important;
+    border: 0px solid #009ad8 !important;
+    border-radius:40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .navbar-toggler .new_shap {
+    border: 3px solid transparent !important;
+  }
+  .navbar-toggler:hover {
+    border: 2px solid #009ad8 !important;
+    i {
+      color: #009ad8 !important;
+      transition: 0.3s ease;
+    }
+    /* .new_shap {
+      display: inline-block;
+      box-sizing: content-box;
+      color: white !important;
+
+      border: 3px solid #009ad8 !important;
+      padding: 20px;
+      border-radius:100vh;
+      display: flex;
+
+      justify-content: center;
+      align-items: center;
+    } */
+  }
+
+  .collapse ul,
+  .collapsing ul {
+    background-color: var(--main_color3) !important;
+    margin-inline: 15px !important ;
+    border: 1px solid var(--main_color);
+    border-radius: 10px;
+  }
+  .collapse ul .nav-link,
+  .collapsing ul .nav-link {
+    padding-block: 20px !important;
+    border-bottom: 1px solid #323440 !important;
+  }
+  .collapse ul .nav-link:hover,
+  .collapsing ul .nav-link:hover {
+    background-color: var(--small_color) !important;
+  }
+
+  .collapse ul .nav-link span,
+  .collapsing ul .nav-link span {
+    color: #fff !important;
+    font-size: 13px;
+    padding-inline: 10px;
+    transition: 0.5s all;
+  }
+  .collapse .nav-item .nav-link span.active,
+  .collapsing .nav-item .nav-link span.active {
+    border: none !important;
+  }
+
+  .collapse ul .nav-link span:hover,
+  .collapsing ul .nav-link span:hover {
+    color: #fff !important;
+  }
+  .collapse,
+  .collapsing {
+    transition: height 0.35s ease;
+    padding: auto;
+    background-color: var(--main_color) !important;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    padding-bottom: 20px !important ;
+  }
+}
+
+/* hero section */
+.hero {
+  background: url(../images/banner.png);
+  background-repeat: no-repeat;
+}
+
+.search_weather #search {
+  background-color: var(--main_color) !important;
+  outline: 0 !important;
+}
+.card_1,
+.card_2,
+.card_3 {
+  width: 33% !important;
+  /*  min-height: 300px !important; */
+}
+@media screen and (max-width: 992px) {
+  .card_1,
+  .card_2,
+  .card_3 {
+    width: 100% !important;
+    /*  min-height: 300px !important; */
+  }
+}
+
+.card_1 .card-body p,
+.card_2 .card-body p,
+.card_3 .card-body p{
+  font-size: 70px !important;
+  font-weight: bold;
+}
+
+.hero .weather_content .weather_results .card_1 .card-header {
+  background-color: var(--header_color) !important;
+  color: var(--small_color) !important;
+}
+
+.hero .weather_content .weather_results .card_1 .card-body,
+.hero .weather_content .weather_results .card_1 .card-footer {
+  background-color: #323544 !important;
+  color: #fff !important;
+}
+
+.hero .weather_content .weather_results .card_1 .card-footer {
+  color: #8e8f94 !important;
+  font-size: 14px;
+  text-transform: capitalize !important;
+}
+
+.hero .weather_content .weather_results .card_2 .card-header {
+  background-color: #232530 !important;
+  color: var(--small_color) !important;
+}
+
+.hero .weather_content .weather_results .card_2 .card-body,
+.hero .weather_content .weather_results .card_2 .card-footer {
+  background-color: #262936 !important;
+  color: #fff !important;
+}
+.hero .weather_content .weather_results .card_3 .card-header {
+  background-color: var(--header_color) !important;
+  color: var(--small_color) !important;
+}
+
+.hero .weather_content .weather_results .card_3 .card-body,
+.hero .weather_content .weather_results .card_3 .card-footer {
+  background-color: var(--header_color2) !important;
+  color: #fff !important;
+}
+
+.hero .weather_content .weather_results .card-footer{
+  font-size: 14px !important;
+  font-weight: 300 !important;
+  color: #bfc1c8 !important;
+  text-transform: capitalize !important;
+}
+
+.weather_status{
+  color:#009ad8 !important
+}
+/* footer */
+.footer {
+  background-color: var(--main_color3) !important;
+}
+
+.footer ul li span {
+  background-color: #fff;
+  display: inline-block;
+  width: 30px !important;
+  height: 30px !important;
+  border-radius:100vh ;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--main_color);
+  cursor: pointer;
+  transition: 0.5s all;
+
+  i{
+    color:var(--sub_color);
+  }
+}
+
+.footer ul li span:hover{
+  background-color: var(--sub_color);
+
+  i{
+    color:#fff;
+  }
+}
